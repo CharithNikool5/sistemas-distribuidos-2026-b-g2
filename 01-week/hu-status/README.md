@@ -5,9 +5,9 @@
 # Weekly Status - Week 01
 
 <!-- CONFIG-START - must match your profile repo (username/username) CONFIG -->
-- FULL_NAME:
-- GITHUB_USER:
-- TEAM:
+- FULL_NAME:Charith Nikool Chavarro Meneses
+- GITHUB_USER:CharithNikool5
+- TEAM:Angie Valentina Florez, Daniel Stiven Poveda cante, Juan esteban Oliveros, Charith Nikool Chavarro Meneses
 - SPRINT_GOAL:
 <!-- CONFIG-END -->
 
