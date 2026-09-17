@@ -21,11 +21,7 @@
 > to be provisioned before opening the first `hu-xxx-dev` branches.
 
 ## 2. My individual contribution
-- [COMPLETAR: describe tu parte específica — p. ej. "Redacté/revisé la definición de los
-  microservicios transversales (Workflow, API Gateway, Infraestructura, Worker) y cómo se
-  relacionan con los 5 dominios de negocio ya definidos."]
-- [COMPLETAR: p. ej. "Documenté el flujo de ejemplo Workflow → Booking/Payment/Notification/
-  Property para el caso de una reserva, evitando que cada dominio tenga que conocer a los demás."]
+-This week, my individual task was to gain a deeper understanding of what cross-cutting microservices are and how they work, in order to fully grasp the subject; my research findings can be found in Session 1.
 
 ## 3. Blockers and risks
 - **Blocker:** the team cannot start coding yet — waiting for the repositories to be delivered,
@@ -60,4 +56,4 @@
 ## 6. Evidence links
 - Cross-cutting microservices design: `DIFERENTES_MICROSERVICIOS_TRANSVERSALES.docx`
 - Domain/backlog baseline referenced: `functional.md`, `user-stories.md`, `scope.md`
-- [COMPLETAR: link al PR/commit donde se subió el documento de transversales al repo del equipo]
+- document link: https://github.com/CharithNikool5/sistemas-distribuidos-2026-b-g2/blob/main/06-week/01-session/DIFERENTES%20MICROSERVICIOS%20TRANSVERSALES.docx
