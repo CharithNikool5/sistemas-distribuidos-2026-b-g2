@@ -1,13 +1,15 @@
-<!-- Your weekly grade is read AUTOMATICALLY from this file:
-   08-week/hu-status/README.md  (inside YOUR fork). English. -->
+<!-- HU-STATUS TEMPLATE - do NOT remove the <!-- ... --> markers or the table headers.
+     Your weekly grade is read AUTOMATICALLY from this file:
+       08-week/hu-status/README.md  (inside YOUR fork). English. -->
+
 # Weekly Status - Week 08
 
-FULL_NAME: <WRITE-YOUR-FULL-NAME-HERE>
-GITHUB_USER: CharithNikool5
-TEAM: Pms_Property
-SPRINT_GOAL: Make the core aggregate and the entry point explicit — update the API
-Gateway contract, publish the `Reserva` lifecycle state diagram and close the API
-decisions that apply to several services.
+<!-- CONFIG-START - must match your profile repo (username/username) CONFIG -->
+- FULL_NAME: Charith Nikool Chavarro Meneses
+- GITHUB_USER: CharithNikool5
+- TEAM: Pms_Property
+- SPRINT_GOAL: Make the core aggregate and the entry point explicit — update the API Gateway contract, publish the `Reserva` lifecycle state diagram and close the API decisions that apply to several services.
+<!-- CONFIG-END -->
 
 ## 1. User stories worked this week
 

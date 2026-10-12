@@ -1,13 +1,15 @@
-<!-- Your weekly grade is read AUTOMATICALLY from this file:
-   09-week/hu-status/README.md  (inside YOUR fork). English. -->
+<!-- HU-STATUS TEMPLATE - do NOT remove the <!-- ... --> markers or the table headers.
+     Your weekly grade is read AUTOMATICALLY from this file:
+       09-week/hu-status/README.md  (inside YOUR fork). English. -->
+
 # Weekly Status - Week 09
 
-FULL_NAME: <WRITE-YOUR-FULL-NAME-HERE>
-GITHUB_USER: CharithNikool5
-TEAM: Pms_Property
-SPRINT_GOAL: Bring architecture and data documentation in line with the project's
-decisions and the course norm — endpoint fiches, closed gaps, ADRs for workflow scope,
-languages and frontend, deployment view, and the data model (payments, migrations).
+<!-- CONFIG-START - must match your profile repo (username/username) CONFIG -->
+- FULL_NAME: Charith Nikool Chavarro Meneses
+- GITHUB_USER: CharithNikool5
+- TEAM: Pms_Property
+- SPRINT_GOAL: Bring architecture and data documentation in line with the project's decisions and the course norm — endpoint fiches, closed gaps, ADRs for workflow scope, languages and frontend, deployment view, and the data model (payments, migrations).
+<!-- CONFIG-END -->
 
 ## 1. User stories worked this week
 
