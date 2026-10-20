@@ -1,0 +1,73 @@
+# Week 11 CP7 - notification-service (confirmation e-mail journey)
+# SLO 1: 99 % of e-mails delivered      -> error budget 0.01
+# SLO 2: 95 % delivered within 60 s     -> error budget 0.05
+# promtool check rules 06-alerts.yml
+
+groups:
+  - name: notification-email-delivery
+    rules:
+      - alert: NotificationEmailFastBurn
+        expr: |
+          (
+            sum(rate(notification_deliveries_total{channel="email",outcome="failed"}[1h]))
+            / sum(rate(notification_deliveries_total{channel="email",outcome=~"sent|failed"}[1h]))
+          ) > (14.4 * 0.01)
+          and
+          (
+            sum(rate(notification_deliveries_total{channel="email",outcome="failed"}[5m]))
+            / sum(rate(notification_deliveries_total{channel="email",outcome=~"sent|failed"}[5m]))
+          ) > (14.4 * 0.01)
+        for: 2m
+        labels:
+          severity: page
+          team: pms-property
+          service: notification-service
+          slo: email-delivered
+        annotations:
+          summary: "Confirmation e-mails are failing (SLO 1 burning 14.4x)"
+          description: "More than 14.4 % of e-mail deliveries failed in the last hour and in the last 5 minutes."
+          runbook_url: "https://github.com/CharithNikool5/sistemas-distribuidos-2026-b-g2/blob/main/11-week/workshop/07-runbook.md"
+
+      - alert: NotificationEmailSlowBurn
+        expr: |
+          (
+            sum(rate(notification_deliveries_total{channel="email",outcome="failed"}[6h]))
+            / sum(rate(notification_deliveries_total{channel="email",outcome=~"sent|failed"}[6h]))
+          ) > (6 * 0.01)
+          and
+          (
+            sum(rate(notification_deliveries_total{channel="email",outcome="failed"}[30m]))
+            / sum(rate(notification_deliveries_total{channel="email",outcome=~"sent|failed"}[30m]))
+          ) > (6 * 0.01)
+        for: 5m
+        labels:
+          severity: ticket
+          team: pms-property
+          service: notification-service
+          slo: email-delivered
+        annotations:
+          summary: "Confirmation e-mails fail more than they should (SLO 1 burning 6x)"
+          description: "More than 6 % of e-mail deliveries failed over 6 hours."
+          runbook_url: "https://github.com/CharithNikool5/sistemas-distribuidos-2026-b-g2/blob/main/11-week/workshop/07-runbook.md"
+
+      - alert: NotificationEmailLate
+        expr: |
+          (
+            1 - sum(rate(notification_delivery_duration_seconds_bucket{le="60.0"}[6h]))
+                / sum(rate(notification_delivery_duration_seconds_count[6h]))
+          ) > (6 * 0.05)
+          and
+          (
+            1 - sum(rate(notification_delivery_duration_seconds_bucket{le="60.0"}[30m]))
+                / sum(rate(notification_delivery_duration_seconds_count[30m]))
+          ) > (6 * 0.05)
+        for: 10m
+        labels:
+          severity: ticket
+          team: pms-property
+          service: notification-service
+          slo: email-on-time
+        annotations:
+          summary: "Confirmation e-mails arrive late (SLO 2 burning 6x)"
+          description: "More than 30 % of e-mails took longer than 60 s over 6 hours."
+          runbook_url: "https://github.com/CharithNikool5/sistemas-distribuidos-2026-b-g2/blob/main/11-week/workshop/07-runbook.md"
