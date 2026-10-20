@@ -5,33 +5,47 @@
 # Weekly Status - Week 11
 
 <!-- CONFIG-START - must match your profile repo (username/username) CONFIG -->
-- FULL_NAME:
-- GITHUB_USER:
-- TEAM:
-- SPRINT_GOAL:
+- FULL_NAME: Charith Nikool Chavarro Meneses
+- GITHUB_USER: CharithNikool5
+- TEAM: Pms_Property
+- SPRINT_GOAL: Make the confirmation e-mail observable from the Saga to the guest's inbox — trace, logs, metrics, SLOs, alerts and incident response for notification-service — and prepare corte 3.
 <!-- CONFIG-END -->
 
 ## 1. User stories worked this week
 | HU ID | Title | Status (todo/doing/done) | Evidence (PR or commit URL) |
 |---|---|---|---|
-| HU-XXX-001 |  |  |  |
+| W11-CP1 | Trace map from the Saga to the e-mail: booking outbox, RabbitMQ, notification-service, identity-service | done | https://github.com/CharithNikool5/sistemas-distribuidos-2026-b-g2/blob/main/11-week/workshop/01-journey.md |
+| W11-CP2 | JSON log contract for deliveries, with the never-log list for personal data | done | https://github.com/CharithNikool5/sistemas-distribuidos-2026-b-g2/blob/main/11-week/workshop/02-log-contract.md |
+| W11-CP3 | Java consumer middleware, logger, trace sent to Identity and delivery metrics | done | https://github.com/CharithNikool5/sistemas-distribuidos-2026-b-g2/tree/main/11-week/workshop/03-instrumentation |
+| W11-CP4 | Golden signals of the relay, the queue, Notification and its dependencies | done | https://github.com/CharithNikool5/sistemas-distribuidos-2026-b-g2/blob/main/11-week/workshop/04-metrics.md |
+| W11-CP6 | SLOs: e-mail delivered, on time, and no event lost | todo | — |
+| W11-CP7 | Burn-rate alerts and alert policy | todo | — |
+| W11-CP8 | Runbook of `NotificationEmailFastBurn` | todo | — |
+| W11-CP9 | Drill: Identity slow under Notification, postmortem and three stories | todo | — |
 
 ## 2. My individual contribution
--
+- Mapped the confirmation e-mail journey and how the trace survives the outbox and RabbitMQ into notification-service.
+- Wrote the log contract of a delivery, keeping the guest's e-mail and name out of the logs.
+- Wrote and tested a Java module of `notification-service`: the consumer keeps the Saga's `trace_id` and sends it to `identity-service`; duplicates are skipped by `event_id`.
+- Defined the golden signals and the metric catalog of the journey.
 
 ## 3. Blockers and risks
--
+- GAP-017 is still open: how Notification gets the guest's e-mail. The workshop assumes an internal read to Identity.
+- The services are not built yet; the module is standalone and the SLO numbers are estimates.
 
 ## 4. Plan for next week
--
+- Delivery 2 of the workshop (CP6 to CP10).
+- Corte 3: the real consumer of `notification-service` with the tracing of CP3.
+- Close GAP-017 in `property-docs` (postmortem story 3).
 
 ## 5. Compliance self-check
-- [ ] Conventional Commits - `type(scope): summary`
+- [x] Conventional Commits - `type(scope): summary`
 - [ ] Per-environment HU branch + PR to that environment (hu-xxx-dev -> develop, ...)
-- [ ] Testable acceptance criteria
-- [ ] Tests added/updated (unit / integration)
+- [x] Testable acceptance criteria
+- [x] Tests added/updated (unit / integration) — *(`ConfirmationTraceTest`)*
 - [ ] DDD / hexagonal boundaries respected (domain has no I/O)
-- [ ] No secrets; config via environment variables
+- [x] No secrets; config via environment variables — *(service token and provider key from the environment)*
 
 ## 6. Evidence links
--
+- Workshop: https://github.com/CharithNikool5/sistemas-distribuidos-2026-b-g2/tree/main/11-week/workshop
+- property-docs: https://github.com/code-corhuila/property-docs
