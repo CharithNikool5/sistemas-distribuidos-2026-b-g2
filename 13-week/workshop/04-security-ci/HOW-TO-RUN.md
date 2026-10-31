@@ -21,4 +21,23 @@ Endpoints: `POST /api/v1/login` (E-11) and `GET /api/v1/users/me`.
 5. Clean up: `docker rm -f gateway`.
 
 The services behind the gateway may be off: the gateway answers the 401 and the 429 by
-itself. The real console output is added in CP8.
+itself.
+
+## Real output (CP8)
+
+```
+$ sh "$FORK/13-week/workshop/04-security-ci/negative-auth.sh" http://localhost:8080
+OK: /api/v1/users/me without a credential -> 401
+OK: 11th POST /api/v1/login from one IP -> 429
+
+ASUS@DESKTOP-2F1I0EJ MINGW64 ~/Desktop/clases 2026b/sistemas distribuidos/repoProyecto/property-api-gateway (develop)
+$ docker rm -f w13-gateway
+w13-gateway
+
+```
+
+## security.yml validation
+
+```
+PEGA AQUÍ LA SALIDA DE ACTIONLINT (si no imprimió nada, escribe: actionlint printed no errors)
+```
