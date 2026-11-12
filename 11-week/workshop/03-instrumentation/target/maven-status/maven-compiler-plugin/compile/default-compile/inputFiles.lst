@@ -1,0 +1,6 @@
+/app/src/main/java/co/edu/corhuila/property/notification/tracing/DeliveryMetrics.java
+/app/src/main/java/co/edu/corhuila/property/notification/tracing/IdentityContactClient.java
+/app/src/main/java/co/edu/corhuila/property/notification/tracing/Log.java
+/app/src/main/java/co/edu/corhuila/property/notification/tracing/ReservaConfirmadaHandler.java
+/app/src/main/java/co/edu/corhuila/property/notification/tracing/SpanContext.java
+/app/src/main/java/co/edu/corhuila/property/notification/tracing/TracedConsumer.java

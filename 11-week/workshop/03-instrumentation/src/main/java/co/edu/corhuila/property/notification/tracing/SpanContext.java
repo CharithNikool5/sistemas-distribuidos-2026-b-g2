@@ -1,5 +1,4 @@
 package co.edu.corhuila.property.notification.tracing;
-
 import java.util.Map;
 import java.util.UUID;
 
@@ -11,7 +10,7 @@ public record SpanContext(String traceId, String spanId) {
 
     public static final String HEADER = "traceparent";
 
-    /** Reads traceparent from the message headers; a missing or broken one starts a new trace. */
+    /** lee el traceparent de los encabezados del mensaje; un valor faltante o inválido inicia un nuevo rastro. */
     public static SpanContext extract(Map<String, ?> headers) {
         Object raw = headers == null ? null : headers.get(HEADER);
         if (raw != null) {
@@ -25,11 +24,11 @@ public record SpanContext(String traceId, String spanId) {
         return new SpanContext(UUID.randomUUID().toString().replace("-", ""), newSpanId());
     }
 
-    /** Context for an outbound call: keeps traceId, opens a new span. */
+    /** Crea span */
     public SpanContext childSpan() {
         return new SpanContext(traceId, newSpanId());
     }
-
+    //construye el traceparent para los encabezados del mensaje
     public String traceparent() {
         return "00-" + traceId + "-" + spanId + "-01";
     }

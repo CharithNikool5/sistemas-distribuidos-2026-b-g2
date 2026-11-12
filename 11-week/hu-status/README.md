@@ -22,6 +22,7 @@
 | W11-CP7 | Burn-rate alerts and alert policy | done | https://github.com/CharithNikool5/sistemas-distribuidos-2026-b-g2/blob/main/11-week/workshop/06-alerts.yml |
 | W11-CP8 | Runbook of `NotificationEmailFastBurn` | done | https://github.com/CharithNikool5/sistemas-distribuidos-2026-b-g2/blob/main/11-week/workshop/07-runbook.md |
 | W11-CP9 | Drill: Identity slow under Notification, postmortem and three stories | done | https://github.com/CharithNikool5/sistemas-distribuidos-2026-b-g2/blob/main/11-week/workshop/08-incident.md |
+| W11-DOCS | Microservices documentation: api gateway, payment service, and workflow and worker operation in `05-architecture/microservices` | done | https://github.com/code-corhuila/property-docs/pull/153, https://github.com/code-corhuila/property-docs/pull/154, https://github.com/code-corhuila/property-docs/pull/155 |
 
 ## 2. My individual contribution
 - Mapped the confirmation e-mail journey and how the trace survives the outbox and RabbitMQ into notification-service.
@@ -29,6 +30,7 @@
 - Wrote and tested a Java module of `notification-service`: the consumer keeps the Saga's `trace_id` and sends it to `identity-service`; duplicates are skipped by `event_id`.
 - Defined the metrics, three SLOs, the burn-rate alerts and the runbook of the page.
 - Ran a drill with Identity slow; the postmortem showed our SLI counted retries as failures and turned it into three user stories.
+- Wrote the `docs(microservices)` pull requests of my services: https://github.com/code-corhuila/property-docs/pull/153, https://github.com/code-corhuila/property-docs/pull/154, https://github.com/code-corhuila/property-docs/pull/155 (merged).
 
 ## 3. Blockers and risks
 - GAP-017 is still open: how Notification gets the guest's e-mail. The workshop assumes an internal read to Identity.
@@ -40,12 +42,14 @@
 
 ## 5. Compliance self-check
 - [x] Conventional Commits - `type(scope): summary`
-- [ ] Per-environment HU branch + PR to that environment (hu-xxx-dev -> develop, ...)
+- [ ] Per-environment HU branch + PR to that environment (hu-xxx-dev -> develop, ...) — *(individual workshop in my fork)*
 - [x] Testable acceptance criteria
 - [x] Tests added/updated (unit / integration) — *(`ConfirmationTraceTest`)*
-- [ ] DDD / hexagonal boundaries respected (domain has no I/O)
+- [ ] DDD / hexagonal boundaries respected (domain has no I/O) — *(no domain code this week)*
 - [x] No secrets; config via environment variables — *(service token and provider key from the environment)*
 
 ## 6. Evidence links
 - Workshop: https://github.com/CharithNikool5/sistemas-distribuidos-2026-b-g2/tree/main/11-week/workshop
+- Commits of the workshop in my fork: https://github.com/CharithNikool5/sistemas-distribuidos-2026-b-g2/commits/main/11-week
+- Microservices documentation pull requests: https://github.com/code-corhuila/property-docs/pull/153, https://github.com/code-corhuila/property-docs/pull/154, https://github.com/code-corhuila/property-docs/pull/155
 - property-docs: https://github.com/code-corhuila/property-docs

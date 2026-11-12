@@ -1,0 +1,7 @@
+co/edu/corhuila/property/notification/tracing/Log.class
+co/edu/corhuila/property/notification/tracing/ReservaConfirmadaHandler.class
+co/edu/corhuila/property/notification/tracing/TracedConsumer.class
+co/edu/corhuila/property/notification/tracing/DeliveryMetrics.class
+co/edu/corhuila/property/notification/tracing/TracedConsumer$Message.class
+co/edu/corhuila/property/notification/tracing/IdentityContactClient.class
+co/edu/corhuila/property/notification/tracing/SpanContext.class
